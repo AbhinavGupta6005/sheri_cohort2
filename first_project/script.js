@@ -17,33 +17,16 @@ function openFeature() {
   });
 }
 
-openFeature()
+openFeature();
 
 function todoList() {
   var currentTask = [];
 
-  if (localStorage.getItem("currrentTask")) {
+  if (localStorage.getItem("currentTask")) {
     currentTask = JSON.parse(localStorage.getItem("currentTask"));
   } else {
     console.log("Task List Is Empty");
   }
-  // let currentTask = [
-  //   {
-  //     task: "Mandir Jao",
-  //     details: "Hanuman Ji ke Mandir",
-  //     imp: true,
-  //   },
-  //   {
-  //     task: "Recording Kro",
-  //     details: "Cohort ke liye",
-  //     imp: true,
-  //   },
-  //   {
-  //     task: "Lunch at 2 PM",
-  //     details: "Nahi to MUmmy Datengi",
-  //     imp: false,
-  //   },
-  // ];
 
   function renderTask() {
     var allTask = document.querySelector(".allTask");
@@ -60,7 +43,18 @@ function todoList() {
 
     allTask.innerHTML = sum;
 
+    // stringify - change into object to Array form
+
     localStorage.setItem("currentTask", JSON.stringify(currentTask));
+
+
+    document,querySelectorAll('.task button').forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        currentTask.splice(btn.id, 1); // to remove the item using splice
+        renderTask();
+        location.reload();
+      });
+    });
   }
   renderTask();
 
@@ -70,7 +64,7 @@ function todoList() {
   let taskCheckbox = document.querySelector(".addTask form #check");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault()
+    e.preventDefault();
     currentTask.push({
       task: taskInput.value,
       details: taskDetailsInput.value,
@@ -78,16 +72,13 @@ function todoList() {
     });
     renderTask();
 
-    // location.reload();
-  });
-
-  var markCompletedBtn = document.querySelectorAll(".task button");
-
-  markCompletedBtn.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      currentTask.splice(btn.id, 1);
-      renderTask();
-      location.reload();
-    });
+    taskCheckbox.checked = false
+    taskInput.value = ''
+    taskDetailsInput.value = ''
+   
   });
 }
+
+todoList();
+
+

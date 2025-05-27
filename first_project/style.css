@@ -125,9 +125,7 @@ section.allElems{
 .back:active{
     scale: 0.97;
 }
-.todo-list-fullpage{
-    display: block;
-}
+
 .todo-list-fullpage h2{
     font-size: 65px;
 }
