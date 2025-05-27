@@ -1,0 +1,280 @@
+:root{
+    --pri: #f8f4e1;
+    --sec: #381c0a;
+    --tri1: #feba17;
+    --tri2: #b4846c;
+    --red : red;
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+@font-face {
+    font-family: aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: aeonik;
+    color: var(--pri);
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+}
+h1{
+    font-family: aeonik;
+    font-weight: 700;
+    color: var(--pri);
+}
+h1{
+    color: var(--pri);
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: var(--tri2);
+}
+
+section.allElems{
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    padding-top: 80px;
+    background-color: var(--);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+    position: absolute;
+}
+
+.elem{
+    background-color: #feba17;
+    height: 400px;
+    width: 250px;
+    font-size: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    box-shadow: 0 5px 20px var(--tri2);
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.elem h2{
+    position: absolute;
+    bottom: 4%;
+    font-weight: 400px;
+    font-size: 30px;
+    right: 5%;
+}
+
+.elem:active{
+    scale: 0.97;
+}
+
+.fullElem{
+    height: 100%;
+    width: 100%;
+    background-color: #381c0a;
+    padding: 20px;
+    
+    display: none;
+    position: absolute;
+}
+
+.back{
+    position: absolute;
+    right: 5%;
+    background-color: red;
+    border-radius: 10px;
+    padding: 20px 22px;
+    font-size: 25px;
+    border: none;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+.back:active{
+    scale: 0.97;
+}
+.todo-list-fullpage{
+    display: block;
+}
+.todo-list-fullpage h2{
+    font-size: 65px;
+}
+
+.todo-list-fullpage .todo-container{
+    height: 80%;
+    width: 100%;
+    /* background-color: var(--tri2); */
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-list-fullpage .todo-container .addTask{
+    width: 33%;
+    background-color: var(--tri2);
+    height: 100%;
+    border-radius: 20px;
+}
+.todo-list-fullpage .todo-container .allTask{
+    width: 65%;
+    background-color: var(--tri2);
+    height: 100%;
+    border-radius: 20px;
+}
+.todo-list-fullpage .todo-container .addTask form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.todo-container .addTask form input#task-input{
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 28px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.todo-container .addTask form textarea{
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 28px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border-radius: 5px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+.todo-container .addTask form button{
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 25px;
+    background-color: var(--tri1);
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    margin-bottom: 20px;
+    transition: all ease 0.3s;
+}
+
+.todo-container .addTask form button:active{
+    scale: 0.97;
+}
+
+.todo-list-fullpage .todo-container .allTask{
+    width: 65%;
+    background-color: var(--tri2);
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    overflow: auto;
+}
+
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--pri);
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.task h5{
+    color: var(--sec);
+    font-size: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.task h5 span{
+    background-color: var(--red);
+    color: var(--pri);
+    padding: 4px 6px;
+    border-radius: 50px;
+    font-size: 11px;
+}
+.task h5 span.true{
+    opacity: 1;
+}
+.task h5 span.false{
+    opacity: 0;
+}
+
+.task button{
+    color: var(--pri);
+    background-color: green;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+}
+
+.task button:active{
+    scale: 0.96;
+}
+
+.mark-imp{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.mark-imp input{
+    scale: 1.7;
+}
+.mark-imp label{
+    font-size: 21px;
+}
