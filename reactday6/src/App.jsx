@@ -23,7 +23,7 @@ const App = () => {
 
     <input checked={gender == "female" && true} onChange={(e) => setgender(e.target.value)} value= "female" type="radio" />Female
     <br /><br />
-    <select onChange={(e) => setcity(e.target.value)}>
+    <select onChange={(e) => setcity(e.target.value)} value={city}>
       <option value="delhi">Delhi</option>
       <option value="utter pradesh">Utter Pradesh</option>
       <option value="kalkatta">Kolkata</option>
