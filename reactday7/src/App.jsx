@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Read from "./components/Read";
 import Create from "./components/Create";
+import Read from "./components/Read";
 
 
 const App = () => {
