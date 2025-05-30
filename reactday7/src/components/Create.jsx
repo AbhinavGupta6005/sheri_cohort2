@@ -41,18 +41,19 @@ const Create = (props) => {
 
 
   return (
-  <>
-    <h1>Create Tasks</h1>
+  <div className="w-[60%] p-10">
+    <h1 className="text-5xl font-thin mb-10">Set <span className="text-red-400">Reminders</span> for
+    <br />{" "} tasks</h1>
     <form onSubmit={SubmitHandler}>
-      <input onChange={(e) => settitle(e.target.value)}
+      <input className="p-2 border-b w-full text-2xl font-thin outline-0" onChange={(e) => settitle(e.target.value)}
         value={title}
         type="text"
         placeholder="title" />
       <br /><br />
 
-      <button style={buttoncss}>Create Todo</button>
+      <button className="text-xl px-10 py-2 border rounded">Create Todo</button>
     </form>
-  </>
+  </div>
   );
 }
 

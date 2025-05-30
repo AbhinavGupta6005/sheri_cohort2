@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import "./Read.css";
+// import { Fragment } from "react";
+// import "./Read.css";
 
 
 const Read = (props) => {
@@ -14,16 +14,16 @@ const Read = (props) => {
 
   
   const rendertodos = todos.map((todo) => {
-    return (<li key={todo.id}>
-      {todo.title} |{" "} <span onClick={() => DeleteHandler(todo.id)}>Delete</span></li>
+    return (<li key={todo.id} className=" mb-2 flex justify-between items-center p-4 bg-gray-900 rounded">
+      <span className="text-xl font-thin">{todo.title}</span><button className="text-red-400 font-thin text-sm" onClick={() => DeleteHandler(todo.id)}>Delete</button></li>
     ); 
   })
 
   return (
-    <Fragment>
-      < h1 class="read_list_heading">Pending Todo</h1> 
+    <div className="w-[40%]">
+      < h1 className="text-5xl font-thin mb-10"><span className="text-pink-400">Pending</span> Todo</h1> 
       <ol>{rendertodos}</ol>
-    </Fragment>
+    </div>
   )
 }
 
