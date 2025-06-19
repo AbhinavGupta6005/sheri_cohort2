@@ -5,7 +5,7 @@ import { recipecontext } from "../context/RecipeContext";
 
 const Create = () => {
     const {data, setdata} = useContext(recipecontext);
-    const {register,handleSubmit, reset} = useForm();
+    const {register, handleSubmit, reset} = useForm();
 
     const SubmitHandler = (recipe) =>{
         recipe.id = nanoid();
